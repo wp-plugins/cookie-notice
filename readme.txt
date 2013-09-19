@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 3.5.2
-Stable tag: 1.0.0
+Tested up to: 3.6.1
+Stable tag: 1.0.1
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -45,7 +45,7 @@ No questions yet.
 == Changelog ==
 
 = 1.0.1 =
-* Tweak: Changed setting cookie from AJAX to JS driven
+* Tweak: Changed setting cookie mode from AJAX to JS driven
 
 = 1.0.0 =
 Initial release
