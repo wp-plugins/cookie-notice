@@ -30,9 +30,9 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 
 == Installation ==
 
-1. Install Cookie Notice either via the WordPress.org plugin directory, or by uploading the files to your server</li>
-1. Activate the plugin through the 'Plugins' menu in WordPress</li>
-1. Go to the Cookie Notice settings and set your options.</li>
+1. Install Cookie Notice either via the WordPress.org plugin directory, or by uploading the files to your server
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to the Cookie Notice settings and set your options.
 
 == Frequently Asked Questions ==
 
@@ -44,9 +44,13 @@ No questions yet.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* Tweak: Changed setting cookie from AJAX to JS driven
+
+= 1.0.0 =
 Initial release
 
 == Upgrade Notice ==
 
-Initial release of Cookie Notice
+= 1.0.1 =
+* Tweak: Changed setting cookie from AJAX to JS driven

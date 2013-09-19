@@ -68,8 +68,6 @@ class Cookie_Notice
 		add_action('plugins_loaded', array(&$this, 'load_defaults'));
 		add_action('admin_enqueue_scripts', array(&$this, 'admin_load_scripts_styles'));
 		add_action('wp_enqueue_scripts', array(&$this, 'front_load_scripts_styles'));
-		add_action('wp_ajax_cn-save-cookie', array(&$this, 'ajax_save_cookie'));
-		add_action('wp_ajax_nopriv_cn-save-cookie', array(&$this, 'ajax_save_cookie'));
 		add_action('wp_footer', array(&$this, 'add_cookie_notice'));
 
 		//filters
@@ -425,34 +423,15 @@ class Cookie_Notice
 	{
 		if(!(isset($_COOKIE[$this->cookie['name']]) && $_COOKIE[$this->cookie['name']] === $this->cookie['value']))
 		{
-			echo $this->get_frontbox();
+			echo '
+			<div id="cookie-notice" class="cn-'.($this->options['position']).($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'" style="color: '.$this->options['colors']['text'].'; background-color: '.$this->options['colors']['bar'].';">'
+				.'<div class="cookie-notice-container">'
+				.$this->options['message_text']
+				.'<a href="" id="cn-accept-cookie" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['accept_text'].'</a>'
+				.($this->options['see_more'] === 'yes' ? '<a href="'.($this->options['see_more_opt']['link_type'] === 'custom' ? $this->options['see_more_opt']['link'] : get_permalink($this->options['see_more_opt']['id'])).'" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.apply_filters('cn_see_more_text', $this->options['see_more_opt']['text']).'</a>' : '').'
+				</div>
+			</div>';
 		}
-	}
-
-
-	public function ajax_save_cookie()
-	{
-		if($_POST['action'] === 'cn-save-cookie')
-		{
-			echo (setcookie($this->cookie['name'], $this->cookie['value'], current_time('timestamp') + $this->times[$this->options['time']][1], COOKIEPATH, COOKIE_DOMAIN) === TRUE ? 'CN_OK' : '');
-		}
-
-		do_action('cn_after_accepted_cookie');
-
-		exit;
-	}
-
-
-	private function get_frontbox()
-	{
-		return '
-		<div id="cookie-notice" class="cn-'.($this->options['position']).($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'" style="color: '.$this->options['colors']['text'].'; background-color: '.$this->options['colors']['bar'].';">'
-			.'<div class="cookie-notice-container">'
-			.$this->options['message_text']
-			.'<a href="" id="cn-accept-cookie" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['accept_text'].'</a>'
-			.($this->options['see_more'] === 'yes' ? '<a href="'.($this->options['see_more_opt']['link_type'] === 'custom' ? $this->options['see_more_opt']['link'] : get_permalink($this->options['see_more_opt']['id'])).'" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.apply_filters('cn_see_more_text', $this->options['see_more_opt']['text']).'</a>' : '').'
-			</div>
-		</div>';
 	}
 
 

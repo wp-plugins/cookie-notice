@@ -3,8 +3,10 @@
 	min-width: 100%;
 	height: auto;
 	z-index: 999;
-	font-size:12px;
-	line-height:18px; 
+	font-size: 12px;
+	line-height: 18px;
+	left: 0;
+	text-align: center;
 }
 .cookie-notice-container { padding:10px; }
 .cn-top { top:0; }
