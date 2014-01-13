@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 3.6.1
-Stable tag: 1.0.1
+Tested up to: 3.8
+Stable tag: 1.1.0
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -27,6 +27,10 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Set the text and bar background colors
 * .pot file for translations included
 
+= Translations: =
+* Dutch - by [Heleen van den Bos](http://www.bostekst.nl/)
+* Polish - by Bartosz Arendt
+
 
 == Installation ==
 
@@ -44,6 +48,13 @@ No questions yet.
 
 == Changelog ==
 
+= 1.1.0 =
+* New: Rewritten cookie setting method to pure JS
+* Fix: Compatibility with WP Super Cache and other caching plugins
+
+= 1.0.2 =
+* New: Dutch translation, thanks to Heleen van den Bos
+
 = 1.0.1 =
 * Tweak: Changed setting cookie mode from AJAX to JS driven
 
@@ -52,5 +63,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-* Tweak: Changed setting cookie from AJAX to JS driven
+= 1.1.0 =
+* New: Rewritten cookie setting method to pure JS
+* Fix: Compatibility with WP Super Cache and other caching plugins

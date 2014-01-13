@@ -2,12 +2,14 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.0.1
+Version: 1.1.0
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
+Text Domain: cookie-notice
+Domain Path: /languages
 
 Restrict Widgets
 Copyright (C) 2013, Digital Factory - info@digitalfactory.pl
@@ -68,7 +70,7 @@ class Cookie_Notice
 		add_action('plugins_loaded', array(&$this, 'load_defaults'));
 		add_action('admin_enqueue_scripts', array(&$this, 'admin_load_scripts_styles'));
 		add_action('wp_enqueue_scripts', array(&$this, 'front_load_scripts_styles'));
-		add_action('wp_footer', array(&$this, 'add_cookie_notice'));
+		add_action('wp_footer', array(&$this, 'add_cookie_notice'), 1000);
 
 		//filters
 		add_filter('plugin_row_meta', array(&$this, 'plugin_extend_links'), 10, 2);
@@ -148,7 +150,7 @@ class Cookie_Notice
 
 	public function admin_menu_options()
 	{
-		$watermark_settings_page = add_options_page(
+		add_options_page(
 			__('Cookie Notice', 'cookie-notice'),
 			__('Cookie Notice', 'cookie-notice'),
 			'manage_options',
@@ -208,7 +210,7 @@ class Cookie_Notice
 		//design
 		add_settings_section('cookie_notice_design', __('Design', 'cookie-notice'), '', 'cookie_notice_options');
 		add_settings_field('cn_position', __('Position', 'cookie-notice'), array(&$this, 'cn_position'), 'cookie_notice_options', 'cookie_notice_design');
-		add_settings_field('cn_hide_effect', __('Hide animation', 'cookie-notice'), array(&$this, 'cn_hide_effect'), 'cookie_notice_options', 'cookie_notice_design');
+		add_settings_field('cn_hide_effect', __('Animation', 'cookie-notice'), array(&$this, 'cn_hide_effect'), 'cookie_notice_options', 'cookie_notice_design');
 		add_settings_field('cn_css_style', __('Button style', 'cookie-notice'), array(&$this, 'cn_css_style'), 'cookie_notice_options', 'cookie_notice_design');
 		add_settings_field('cn_colors', __('Colors', 'cookie-notice'), array(&$this, 'cn_colors'), 'cookie_notice_options', 'cookie_notice_design');
 	}
@@ -516,12 +518,12 @@ class Cookie_Notice
 
 		wp_enqueue_script(
 			'cookie-notice-admin',
-			plugins_url('js/cookie-notice-admin.js', __FILE__),
+			plugins_url('js/admin.js', __FILE__),
 			array('jquery', 'jquery-ui-core', 'jquery-ui-button', 'wp-color-picker')
 		);
 
 		wp_enqueue_style('wp-color-picker');
-		wp_enqueue_style('cookie-notice-admin', plugins_url('css/cookie-notice-admin.css', __FILE__));
+		wp_enqueue_style('cookie-notice-admin', plugins_url('css/admin.css', __FILE__));
 		wp_enqueue_style('cookie-notice-wplike', plugins_url('css/wp-like-ui-theme.css', __FILE__));
 	}
 
@@ -535,7 +537,7 @@ class Cookie_Notice
 		{
 			wp_enqueue_script(
 				'cookie-notice-front',
-				plugins_url('js/cookie-notice-front.js', __FILE__),
+				plugins_url('js/front.js', __FILE__),
 				array('jquery')
 			);
 
@@ -553,7 +555,7 @@ class Cookie_Notice
 				)
 			);
 
-			wp_enqueue_style('cookie-notice-front', plugins_url('css/cookie-notice-front.css', __FILE__));
+			wp_enqueue_style('cookie-notice-front', plugins_url('css/front.css', __FILE__));
 		}
 	}
 }

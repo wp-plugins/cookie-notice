@@ -3,14 +3,16 @@ jQuery(document).ready(function($) {
 	$(document).on('click', '#cn-accept-cookie', function(event) {
 		event.preventDefault();
 
-		//sets cookie
 		var cnTime = new Date();
 		var cnLater = new Date();
 
-		cnLater.setTime(cnTime.getTime() + cnArgs.cookieTime);
+		//set new time in seconds
+		cnLater.setTime(parseInt(cnTime.getTime()) + parseInt(cnArgs.cookieTime) * 1000);
+
+		//set cookie
 		document.cookie = cnArgs.cookieName+"="+escape(cnArgs.cookieValue)+";expires="+cnLater.toGMTString()+';domain='+cnArgs.cookieDomain+';path='+cnArgs.cookiePath;
 
-		//hides box
+		//hide box
 		if(cnArgs.hideEffect === 'fade') {
 			$('#cookie-notice').fadeOut(300, function() {
 				$(this).remove();
@@ -23,4 +25,14 @@ jQuery(document).ready(function($) {
 			$('#cookie-notice').remove();
 		}
 	});
+
+	if(document.cookie.indexOf('cookie_notice_accepted') === -1) {
+		if(cnArgs.hideEffect === 'fade') {
+			$('#cookie-notice').fadeIn(300);
+		} else if(cnArgs.hideEffect === 'slide') {
+			$('#cookie-notice').slideDown(300);
+		}
+	} else {
+		$('#cookie-notice').remove();
+	}
 });
