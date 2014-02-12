@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.1
+Version: 1.2.2
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -157,6 +157,7 @@ class Cookie_Notice
 			icl_register_string('Cookie Notice', 'Message in the notice', $this->options['message_text']);
 			icl_register_string('Cookie Notice', 'Button text', $this->options['accept_text']);
 			icl_register_string('Cookie Notice', 'Read more text', $this->options['see_more_opt']['text']);
+			icl_register_string('Cookie Notice', 'Custom link', $this->options['see_more_opt']['link']);
 		}
 	}
 
@@ -468,7 +469,11 @@ class Cookie_Notice
 				$this->options['message_text'] = icl_t('Cookie Notice', 'Message in the notice', $this->options['message_text']);
 				$this->options['accept_text'] = icl_t('Cookie Notice', 'Button text', $this->options['accept_text']);
 				$this->options['see_more_opt']['text'] = icl_t('Cookie Notice', 'Read more text', $this->options['see_more_opt']['text']);
+				$this->options['see_more_opt']['link'] = icl_t('Cookie Notice', 'Custom link', $this->options['see_more_opt']['link']);
 			}
+
+			if(function_exists('icl_object_id'))
+				$this->options['see_more_opt']['id'] = icl_object_id($this->options['see_more_opt']['id'], 'page', TRUE);
 
 			echo '
 			<div id="cookie-notice" class="cn-'.($this->options['position']).($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'" style="color: '.$this->options['colors']['text'].'; background-color: '.$this->options['colors']['bar'].';">'
