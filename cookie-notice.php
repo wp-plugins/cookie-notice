@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.0
+Version: 1.2.1
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -187,7 +187,22 @@ class Cookie_Notice
 		echo '
 		<div class="wrap">'.screen_icon().'
 			<h2>'.__('Cookie Notice', 'cookie-notice').'</h2>
-			<div class="metabox-holder postbox-container cookie-notice">
+			<div class="cookie-notice-settings">
+				<div class="df-credits">
+					<h3 class="hndle">'.__('Cookie Notice', 'cookie-notice').'</h3>
+					<div class="inside">
+						<h4 class="inner">'.__('Need support?', 'cookie-notice').'</h4>
+						<p class="inner">'.__('If you are having problems with this plugin, please talk about them in the', 'cookie-notice').' <a href="http://dfactory.eu/support/" target="_blank" title="'.__('Support forum', 'cookie-notice').'">'.__('Support forum', 'cookie-notice').'</a></p>
+						<hr />
+						<h4 class="inner">'.__('Do you like this plugin?', 'cookie-notice').'</h4>
+						<p class="inner"><a href="http://wordpress.org/support/view/plugin-reviews/cookie-notice" target="_blank" title="'.__('Rate it 5', 'cookie-notice').'">'.__('Rate it 5', 'cookie-notice').'</a> '.__('on WordPress.org', 'cookie-notice').'<br />'.
+						__('Blog about it & link to the', 'cookie-notice').' <a href="http://dfactory.eu/plugins/cookie-notice/" target="_blank" title="'.__('plugin page', 'cookie-notice').'">'.__('plugin page', 'cookie-notice').'</a><br />'.
+						__('Check out our other', 'cookie-notice').' <a href="http://dfactory.eu/plugins/" target="_blank" title="'.__('WordPress plugins', 'cookie-notice').'">'.__('WordPress plugins', 'cookie-notice').'</a>
+						</p>            
+						<hr />
+						<p class="df-link inner">Created by <a href="http://www.dfactory.eu" target="_blank" title="dFactory - Quality plugins for WordPress"><img src="'.plugins_url('/images/logo-dfactory.png' , __FILE__ ).'" title="dFactory - Quality plugins for WordPress" alt="dFactory - Quality plugins for WordPress" /></a></p>
+					</div>
+				</div>
 				<form action="options.php" method="post">';
 
 		wp_nonce_field('update-options');
@@ -197,21 +212,6 @@ class Cookie_Notice
 
 		echo '
 				</form>
-			</div>
-			<div class="df-credits postbox-container">
-				<h3 class="metabox-title">'.__('Cookie Notice', 'cookie-notice').'</h3>
-				<div class="inner">
-					<h3>'.__('Need support?', 'cookie-notice').'</h3>
-					<p>'.__('If you are having problems with this plugin, please talk about them in the', 'cookie-notice').' <a href="http://dfactory.eu/support/" target="_blank" title="'.__('Support forum', 'cookie-notice').'">'.__('Support forum', 'cookie-notice').'</a></p>
-					<hr />
-					<h3>'.__('Do you like this plugin?', 'cookie-notice').'</h3>
-					<p><a href="http://wordpress.org/support/view/plugin-reviews/cookie-notice" target="_blank" title="'.__('Rate it 5', 'cookie-notice').'">'.__('Rate it 5', 'cookie-notice').'</a> '.__('on WordPress.org', 'cookie-notice').'<br />'.
-					__('Blog about it & link to the', 'cookie-notice').' <a href="http://dfactory.eu/plugins/cookie-notice/" target="_blank" title="'.__('plugin page', 'cookie-notice').'">'.__('plugin page', 'cookie-notice').'</a><br />'.
-					__('Check out our other', 'cookie-notice').' <a href="http://dfactory.eu/plugins/" target="_blank" title="'.__('WordPress plugins', 'cookie-notice').'">'.__('WordPress plugins', 'cookie-notice').'</a>
-					</p>            
-					<hr />
-					<p class="df-link">Created by <a href="http://www.dfactory.eu" target="_blank" title="dFactory - Quality plugins for WordPress"><img src="'.plugins_url('/images/logo-dfactory.png' , __FILE__ ).'" title="dFactory - Quality plugins for WordPress" alt="dFactory - Quality plugins for WordPress" /></a></p>
-				</div>
 			</div>
 			<div class="clear"></div>
 		</div>';
