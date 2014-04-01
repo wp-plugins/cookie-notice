@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.2
+Version: 1.2.3
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -480,7 +480,7 @@ class Cookie_Notice
 				.'<div class="cookie-notice-container">'
 				.$this->options['message_text']
 				.'<a href="" id="cn-accept-cookie" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['accept_text'].'</a>'
-				.($this->options['see_more'] === 'yes' ? '<a href="'.($this->options['see_more_opt']['link_type'] === 'custom' ? $this->options['see_more_opt']['link'] : get_permalink($this->options['see_more_opt']['id'])).'" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['see_more_opt']['text'].'</a>' : '').'
+				.($this->options['see_more'] === 'yes' ? '<a href="'.($this->options['see_more_opt']['link_type'] === 'custom' ? $this->options['see_more_opt']['link'] : get_permalink($this->options['see_more_opt']['id'])).'" target="_blank" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['see_more_opt']['text'].'</a>' : '').'
 				</div>
 			</div>';
 		}
