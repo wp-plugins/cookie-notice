@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.3
+Version: 1.2.4
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -474,15 +474,28 @@ class Cookie_Notice
 
 			if(function_exists('icl_object_id'))
 				$this->options['see_more_opt']['id'] = icl_object_id($this->options['see_more_opt']['id'], 'page', TRUE);
-
-			echo '
-			<div id="cookie-notice" class="cn-'.($this->options['position']).($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'" style="color: '.$this->options['colors']['text'].'; background-color: '.$this->options['colors']['bar'].';">'
+			
+			$options = apply_filters('cn_cookie_notice_args', array(
+				'position' 		=> $this->options['position'],
+				'css_style' 	=> $this->options['css_style'],
+				'colors' 		=> $this->options['colors'],
+				'message_text' 	=> $this->options['message_text'],
+				'accept_text' 	=> $this->options['accept_text'],
+				'see_more' 		=> $this->options['see_more'],
+				'see_more_opt' 	=> $this->options['see_more_opt'],
+			));
+			
+			$output = '
+			<div id="cookie-notice" class="cn-'.($options['position']).($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'" style="color: '.$options['colors']['text'].'; background-color: '.$options['colors']['bar'].';">'
 				.'<div class="cookie-notice-container">'
-				.$this->options['message_text']
-				.'<a href="" id="cn-accept-cookie" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['accept_text'].'</a>'
-				.($this->options['see_more'] === 'yes' ? '<a href="'.($this->options['see_more_opt']['link_type'] === 'custom' ? $this->options['see_more_opt']['link'] : get_permalink($this->options['see_more_opt']['id'])).'" target="_blank" class="button'.($this->options['css_style'] !== 'none' ? ' '.$this->options['css_style'] : '').'">'.$this->options['see_more_opt']['text'].'</a>' : '').'
+				.$options['message_text']
+				.'<a href="" id="cn-accept-cookie" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['accept_text'].'</a>'
+				.($options['see_more'] === 'yes' ? '<a href="'.($options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink($options['see_more_opt']['id'])).'" target="_blank" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['see_more_opt']['text'].'</a>' : '').'
 				</div>
 			</div>';
+			
+			echo apply_filters('cn_cookie_notice_output', $output);
+			
 		}
 	}
 
