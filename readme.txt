@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 3.9.0
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -28,6 +28,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * .pot file for translations included
 
 = Translations: =
+* German - by Alex Ernst
 * Dutch - by [Heleen van den Bos](http://www.bostekst.nl/)
 * Polish - by Bartosz Arendt
 * Portuguese - by Luis Maia
@@ -49,6 +50,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.6 =
+* New: German translation, thanks to Alex Ernst
 
 = 1.2.5 =
 * New: Spanish translation, thanks to Fernando Blasco
@@ -85,5 +89,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.5 =
-* New: Spanish translation, thanks to Fernando Blasco
+= 1.2.6 =
+* New: German translation, thanks to Alex Ernst
