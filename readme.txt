@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 3.9.2
-Stable tag: 1.2.9
+Stable tag: 1.2.9.1
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -54,7 +54,7 @@ No questions yet.
 
 == Changelog ==
 
-= 1.2.9 =
+= 1.2.9.1 =
 * Tweak: Enable HTML in cookie message text
 * New: Option to donate this plugin :)
 
@@ -103,6 +103,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.9 =
+= 1.2.9.1 =
 * Tweak: Enable HTML in cookie message text
 * New: Option to donate this plugin :)
