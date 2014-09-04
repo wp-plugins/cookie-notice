@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 3.9.2
-Stable tag: 1.2.9.1
+Tested up to: 4.0
+Stable tag: 1.2.10
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -33,6 +33,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Dutch - by [Heleen van den Bos](http://www.bostekst.nl/)
 * French - by [Laura Orsal](http://www.traductrice-independante.fr)
 * German - by Alex Ernst
+* Italian - by [Luca](http://www.lucacicca.it)
 * Polish - by Bartosz Arendt
 * Portuguese - by Luis Maia
 * Spanish - by Fernando Blasco
@@ -53,6 +54,10 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.10 =
+* New: Italian translation, thanks to [Luca](http://www.lucacicca.it)
+* Tweak: Confirmed WP 4.0 compatibility
 
 = 1.2.9.1 =
 * Tweak: Enable HTML in cookie message text
@@ -103,6 +108,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.9.1 =
-* Tweak: Enable HTML in cookie message text
-* New: Option to donate this plugin :)
+= 1.2.10 =
+* New: Italian translation, thanks to [Luca](http://www.lucacicca.it)
+* Tweak: Confirmed WP 4.0 compatibility
