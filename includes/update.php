@@ -14,7 +14,7 @@ class Cookie_Notice_Update
 		$this->defaults = $cookie_notice->get_defaults();
 
 		// actions
-		add_action('init', array(&$this, 'check_update'));
+		add_action('init', array($this, 'check_update'));
 	}
 
 

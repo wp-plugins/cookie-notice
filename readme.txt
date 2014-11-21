@@ -1,10 +1,10 @@
-=== Cookie Notice ===
+=== Cookie Notice by dFactory===
 Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 4.0
-Stable tag: 1.2.14
+Tested up to: 4.0.1
+Stable tag: 1.2.15
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -59,6 +59,10 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.15 =
+* New: Danish translation, thanks to Hans C. Jorgensen
+* Fix: Notice bar not visible if no animation selected
 
 = 1.2.14 =
 * New: Hungarian translation, thanks to [Surbma](http://surbma.hu)
@@ -125,5 +129,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.14 =
-* New: Hungarian translation, thanks to [Surbma](http://surbma.hu)
+= 1.2.15 =
+* New: Danish translation, thanks to Hans C. Jorgensen
+* Fix: Notice bar not visible if no animation selected
