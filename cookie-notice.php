@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.15
+Version: 1.2.16
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -53,7 +53,7 @@ class Cookie_Notice
 			'translate' => true,
 			'deactivation_delete' => 'no'
 		),
-		'version' => '1.2.15'
+		'version' => '1.2.16'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -315,7 +315,7 @@ class Cookie_Notice
 		echo '
 		<div id="cn_accept_text">
 			<input type="text" name="cookie_notice_options[accept_text]" value="'.esc_attr($this->options['general']['accept_text']).'" />
-			<p class="description">'.__('The text to show on the button when cookies have not been accepted', 'cookie-notice').'</p>
+			<p class="description">'.__('The text of the option to accept the usage of the cookies and make the notification disappear.', 'cookie-notice').'</p>
 		</div>';
 	}
 
