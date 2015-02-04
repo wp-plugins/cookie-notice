@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.16
+Version: 1.2.17
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -53,7 +53,7 @@ class Cookie_Notice
 			'translate' => true,
 			'deactivation_delete' => 'no'
 		),
-		'version' => '1.2.16'
+		'version' => '1.2.17'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -71,7 +71,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Constructor
 	 */
 	public function __construct()
 	{
@@ -99,7 +99,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Load defaults
 	 */
 	public function load_defaults()
 	{
@@ -180,7 +180,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Loads textdomain
+	 * Load textdomain
 	 */
 	public function load_textdomain()
 	{
@@ -189,7 +189,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Add submenu
 	 */
 	public function admin_menu_options()
 	{
@@ -204,7 +204,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Options page output
 	 */
 	public function options_page()
 	{
@@ -219,16 +219,16 @@ class Cookie_Notice
 						<p class="inner">'.__('If you are having problems with this plugin, please talk about them in the', 'cookie-notice').' <a href="http://dfactory.eu/support/" target="_blank" title="'.__('Support forum', 'cookie-notice').'">'.__('Support forum', 'cookie-notice').'</a></p>
 						<hr />
 						<h4 class="inner">'.__('Do you like this plugin?', 'cookie-notice').'</h4>
-						<p class="inner"><a href="http://wordpress.org/support/view/plugin-reviews/cookie-notice" target="_blank" title="'.__('Rate it 5', 'cookie-notice').'">'.__('Rate it 5', 'cookie-notice').'</a> '.__('on WordPress.org', 'cookie-notice').'<br />'.
-						__('Blog about it & link to the', 'cookie-notice').' <a href="http://dfactory.eu/plugins/cookie-notice/" target="_blank" title="'.__('plugin page', 'cookie-notice').'">'.__('plugin page', 'cookie-notice').'</a><br />'.
-						__('Check out our other', 'cookie-notice').' <a href="http://dfactory.eu/plugins/" target="_blank" title="'.__('WordPress plugins', 'cookie-notice').'">'.__('WordPress plugins', 'cookie-notice').'</a>
-						</p>
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="inner">
 							<input type="hidden" name="cmd" value="_s-xclick">
 							<input type="hidden" name="hosted_button_id" value="38CLZJPBEN9ZW">
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 							<img alt="" border="0" src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" width="1" height="1">
-						</form>       
+						</form>
+						<p class="inner"><a href="http://wordpress.org/support/view/plugin-reviews/cookie-notice" target="_blank" title="'.__('Rate it 5', 'cookie-notice').'">'.__('Rate it 5', 'cookie-notice').'</a> '.__('on WordPress.org', 'cookie-notice').'<br />'.
+						__('Blog about it & link to the', 'cookie-notice').' <a href="http://dfactory.eu/plugins/cookie-notice/" target="_blank" title="'.__('plugin page', 'cookie-notice').'">'.__('plugin page', 'cookie-notice').'</a><br />'.
+						__('Check out our other', 'cookie-notice').' <a href="http://dfactory.eu/plugins/" target="_blank" title="'.__('WordPress plugins', 'cookie-notice').'">'.__('WordPress plugins', 'cookie-notice').'</a>
+						</p>    
 						<hr />
 						<p class="df-link inner">Created by <a href="http://www.dfactory.eu" target="_blank" title="dFactory - Quality plugins for WordPress"><img src="'.plugins_url('/images/logo-dfactory.png' , __FILE__ ).'" title="dFactory - Quality plugins for WordPress" alt="dFactory - Quality plugins for WordPress" /></a></p>
 					</div>
@@ -248,7 +248,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Regiseter plugin settings
 	 */
 	public function register_settings()
 	{
@@ -272,7 +272,7 @@ class Cookie_Notice
 
 
 	/**
-	 * 
+	 * Delete plugin data on deactivation
 	 */
 	public function cn_deactivation_delete()
 	{
@@ -295,7 +295,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Cookie message option
 	 */
 	public function cn_message_text()
 	{
@@ -308,7 +308,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Accept cookie label option
 	 */
 	public function cn_accept_text()
 	{
@@ -321,7 +321,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Read more link option
 	 */
 	public function cn_see_more()
 	{
@@ -380,7 +380,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Expiration time option
 	 */
 	public function cn_time()
 	{
@@ -403,7 +403,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Position option
 	 */
 	public function cn_position()
 	{
@@ -426,7 +426,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Animation effect option
 	 */
 	public function cn_hide_effect()
 	{
@@ -449,7 +449,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * CSS style option
 	 */
 	public function cn_css_style()
 	{
@@ -472,7 +472,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Colors option
 	 */
 	public function cn_colors()
 	{
@@ -495,7 +495,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Validate options
 	 */
 	public function validate_options($input)
 	{
@@ -542,7 +542,7 @@ class Cookie_Notice
 
 
 	/**
-	 *
+	 * Cookie nocitce output
 	 */
 	public function add_cookie_notice()
 	{
@@ -602,7 +602,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Gets default settings
+	 * Get default settings
 	 */
 	public function get_defaults()
 	{
@@ -611,7 +611,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Add links to Settings page
+	 * Add links to settings page
 	 */
 	function plugin_settings_link($links, $file) 
 	{
@@ -630,7 +630,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Actives plugin
+	 * Activate the plugin
 	 */
 	public function activation()
 	{
@@ -640,7 +640,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Deactivates plugin
+	 * Deactivate the plugin
 	 */
 	public function deactivation()
 	{
@@ -650,7 +650,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Loads scripts and styles - admin side
+	 * Load scripts and styles - admin side
 	 */
 	public function admin_load_scripts_styles($page)
 	{
@@ -669,7 +669,7 @@ class Cookie_Notice
 
 
 	/**
-	 * Loads scripts and styles - front side
+	 * Load scripts and styles - front side
 	 */
 	public function front_load_scripts_styles()
 	{
