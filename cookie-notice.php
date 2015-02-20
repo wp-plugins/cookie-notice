@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.18
+Version: 1.2.18.1
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -54,7 +54,7 @@ class Cookie_Notice
 			'translate' => true,
 			'deactivation_delete' => 'no'
 		),
-		'version' => '1.2.18'
+		'version' => '1.2.18.1'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -590,8 +590,6 @@ class Cookie_Notice
 
 			if(function_exists('icl_object_id'))
 				$this->options['general']['see_more_opt']['id'] = icl_object_id($this->options['general']['see_more_opt']['id'], 'page', true);
-			
-			print_r($this->options['general']);
 
 			$options = apply_filters('cn_cookie_notice_args', array(
 				'position' => $this->options['general']['position'],

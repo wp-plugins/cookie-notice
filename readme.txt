@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 4.1.1
-Stable tag: 1.2.18
+Stable tag: 1.2.18.1
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -60,6 +60,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.18.1 =
+* Fix: Quick fix for 1.2.18 print_r in code
 
 = 1.2.18 =
 * New: More info link target option
@@ -140,6 +143,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.18 =
+= 1.2.18.1 =
 * New: More info link target option
 * Tweak: Additional HTML ids, for more flexible customization
