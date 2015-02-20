@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.17
+Version: 1.2.18
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -38,6 +38,7 @@ class Cookie_Notice
 			'css_style' => 'bootstrap',
 			'accept_text' => '',
 			'see_more' => 'no',
+			'link_target' => '_blank',
 			'time' => 'month',
 			'hide_effect' => 'fade',
 			'colors' => array(
@@ -53,13 +54,14 @@ class Cookie_Notice
 			'translate' => true,
 			'deactivation_delete' => 'no'
 		),
-		'version' => '1.2.17'
+		'version' => '1.2.18'
 	);
 	private $positions = array();
 	private $styles = array();
 	private $choices = array();
 	private $pages = array();
 	private $links = array();
+	private $link_target = array();
 	private $colors = array();
 	private $options = array();
 	private $effects = array();
@@ -122,6 +124,11 @@ class Cookie_Notice
 		$this->links = array(
 			'custom' => __('Custom link', 'cookie-notice'),
 			'page' => __('Page link', 'cookie-notice')
+		);
+		
+		$this->link_target = array(
+			'_blank',
+			'_self'
 		);
 
 		$this->colors = array(
@@ -259,6 +266,7 @@ class Cookie_Notice
 		add_settings_field('cn_message_text', __('Message', 'cookie-notice'), array($this, 'cn_message_text'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_accept_text', __('Button text', 'cookie-notice'), array($this, 'cn_accept_text'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_see_more', __('More info', 'cookie-notice'), array($this, 'cn_see_more'), 'cookie_notice_options', 'cookie_notice_configuration');
+		add_settings_field('cn_link_target', __('Link target', 'cookie-notice'), array($this, 'cn_link_target'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_time', __('Cookie expiry', 'cookie-notice'), array($this, 'cn_time'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_deactivation_delete', __('Deactivation', 'cookie-notice'), array($this, 'cn_deactivation_delete'), 'cookie_notice_options', 'cookie_notice_configuration');
 
@@ -375,6 +383,27 @@ class Cookie_Notice
 				<input type="text" name="cookie_notice_options[see_more_opt][link]" value="'.esc_attr($this->options['general']['see_more_opt']['link']).'" />
 				<p class="description">'.__('Enter the full URL starting with http://', 'cookie-notice').'</p>
 			</div>
+		</div>';
+	}
+	
+	
+	/**
+	 * Link target option
+	 */
+	public function cn_link_target()
+	{
+		echo '
+		<div id="cn_link_target">
+			<select name="cookie_notice_options[link_target]">';
+
+		foreach($this->link_target as $target)
+		{
+			echo '<option value="'.$target.'" '.selected($target, $this->options['general']['link_target']).'>'.esc_html($target).'</option>';
+		}
+
+		echo '
+			</select>
+			<p class="description">'.__('Select the link target for more info page.', 'cookie-notice').'</p>
 		</div>';
 	}
 
@@ -514,6 +543,9 @@ class Cookie_Notice
 
 			//css
 			$input['css_style'] = sanitize_text_field(isset($input['css_style']) && in_array($input['css_style'], array_keys($this->styles)) ? $input['css_style'] : $this->defaults['general']['css_style']);
+			
+			//time
+			$input['link_target'] = sanitize_text_field(isset($input['link_target']) && in_array($input['link_target'], array_keys($this->link_target)) ? $input['link_target'] : $this->defaults['general']['link_target']);
 
 			//time
 			$input['time'] = sanitize_text_field(isset($input['time']) && in_array($input['time'], array_keys($this->times)) ? $input['time'] : $this->defaults['general']['time']);
@@ -558,6 +590,8 @@ class Cookie_Notice
 
 			if(function_exists('icl_object_id'))
 				$this->options['general']['see_more_opt']['id'] = icl_object_id($this->options['general']['see_more_opt']['id'], 'page', true);
+			
+			print_r($this->options['general']);
 
 			$options = apply_filters('cn_cookie_notice_args', array(
 				'position' => $this->options['general']['position'],
@@ -566,15 +600,16 @@ class Cookie_Notice
 				'message_text' => $this->options['general']['message_text'],
 				'accept_text' => $this->options['general']['accept_text'],
 				'see_more' => $this->options['general']['see_more'],
-				'see_more_opt' => $this->options['general']['see_more_opt']
+				'see_more_opt' => $this->options['general']['see_more_opt'],
+				'link_target' => $this->options['general']['link_target'],
 			));
 
 			$output = '
 			<div id="cookie-notice" class="cn-'.($options['position']).($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'" style="color: '.$options['colors']['text'].'; background-color: '.$options['colors']['bar'].';">'
-				.'<div class="cookie-notice-container">'
+				.'<div class="cookie-notice-container"><span id="cn-notice-text">'
 				.$options['message_text']
-				.'<a href="" id="cn-accept-cookie" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['accept_text'].'</a>'
-				.($options['see_more'] === 'yes' ? '<a href="'.($options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink($options['see_more_opt']['id'])).'" target="_blank" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['see_more_opt']['text'].'</a>' : '').'
+				.'</span><a href="" id="cn-accept-cookie" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['accept_text'].'</a>'
+				.($options['see_more'] === 'yes' ? '<a href="'.($options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink($options['see_more_opt']['id'])).'" target="'.$options['link_target'].'" id="cn-more-info" class="button'.($options['css_style'] !== 'none' ? ' '.$options['css_style'] : '').'">'.$options['see_more_opt']['text'].'</a>' : '').'
 				</div>
 			</div>';
 
