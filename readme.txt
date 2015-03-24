@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 4.1.1
-Stable tag: 1.2.19
+Stable tag: 1.2.20
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -61,6 +61,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.20 =
+* New: Option to select scripts placement, header or footer
 
 = 1.2.19 =
 * New: Danish translation, thanks to Lui Wallentin Gottler
@@ -147,5 +150,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.19 =
-* New: Danish translation, thanks to Lui Wallentin Gottler
+= 1.2.20 =
+* New: Option to select scripts placement, header or footer

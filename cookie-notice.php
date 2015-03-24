@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.19
+Version: 1.2.20
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -51,10 +51,11 @@ class Cookie_Notice
 				'id' => 'empty',
 				'link' => ''
 			),
+			'script_placement' => 'header',
 			'translate' => true,
 			'deactivation_delete' => 'no'
 		),
-		'version' => '1.2.19'
+		'version' => '1.2.20'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -66,6 +67,7 @@ class Cookie_Notice
 	private $options = array();
 	private $effects = array();
 	private $times = array();
+	private $script_placements = array();
 	private $cookie = array(
 		'name' => 'cookie_notice_accepted',
 		'value' => 'TRUE'
@@ -150,6 +152,11 @@ class Cookie_Notice
 			'none' => __('None', 'cookie-notice'),
 			'fade' => __('Fade', 'cookie-notice'),
 			'slide' => __('Slide', 'cookie-notice')
+		);
+		
+		$this->script_placements = array(
+			'header' => __('Header', 'cookie-notice'),
+			'footer' => __('Footer', 'cookie-notice'),
 		);
 
 		$this->pages = get_pages(
@@ -268,6 +275,7 @@ class Cookie_Notice
 		add_settings_field('cn_see_more', __('More info', 'cookie-notice'), array($this, 'cn_see_more'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_link_target', __('Link target', 'cookie-notice'), array($this, 'cn_link_target'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_time', __('Cookie expiry', 'cookie-notice'), array($this, 'cn_time'), 'cookie_notice_options', 'cookie_notice_configuration');
+		add_settings_field('cn_script_placement', __('Script placement', 'cookie-notice'), array($this, 'cn_script_placement'), 'cookie_notice_options', 'cookie_notice_configuration');
 		add_settings_field('cn_deactivation_delete', __('Deactivation', 'cookie-notice'), array($this, 'cn_deactivation_delete'), 'cookie_notice_options', 'cookie_notice_configuration');
 
 		// design
@@ -429,6 +437,27 @@ class Cookie_Notice
 			<p class="description">'.__('The ammount of time that cookie should be stored for.', 'cookie-notice').'</p>
 		</div>';
 	}
+	
+	
+	/**
+	 * Script placement option
+	 */
+	public function cn_script_placement()
+	{
+		echo '
+		<div id="cn_time">
+			<select name="cookie_notice_options[script_placement]">';
+
+		foreach($this->script_placements as $placement => $name)
+		{
+			echo '<option value="'.$placement.'" '.selected($placement, $this->options['general']['script_placement']).'>'.esc_html($name).'</option>';
+		}
+
+		echo '
+			</select>
+			<p class="description">'.__('Select where all the plugin scripts should be placed.', 'cookie-notice').'</p>
+		</div>';
+	}
 
 
 	/**
@@ -544,11 +573,14 @@ class Cookie_Notice
 			//css
 			$input['css_style'] = sanitize_text_field(isset($input['css_style']) && in_array($input['css_style'], array_keys($this->styles)) ? $input['css_style'] : $this->defaults['general']['css_style']);
 			
-			//time
+			//link target
 			$input['link_target'] = sanitize_text_field(isset($input['link_target']) && in_array($input['link_target'], array_keys($this->link_target)) ? $input['link_target'] : $this->defaults['general']['link_target']);
 
 			//time
 			$input['time'] = sanitize_text_field(isset($input['time']) && in_array($input['time'], array_keys($this->times)) ? $input['time'] : $this->defaults['general']['time']);
+			
+			//script placement
+			$input['script_placement'] = sanitize_text_field(isset($input['script_placement']) && in_array($input['script_placement'], array_keys($this->script_placements)) ? $input['script_placement'] : $this->defaults['general']['script_placement']);
 
 			//hide effect
 			$input['hide_effect'] = sanitize_text_field(isset($input['hide_effect']) && in_array($input['hide_effect'], array_keys($this->effects)) ? $input['hide_effect'] : $this->defaults['general']['hide_effect']);
@@ -711,7 +743,9 @@ class Cookie_Notice
 			wp_enqueue_script(
 				'cookie-notice-front',
 				plugins_url('js/front.js', __FILE__),
-				array('jquery')
+				array('jquery'),
+				$this->defaults['version'],
+				isset($this->options['general']['script_placement']) && $this->options['general']['script_placement'] === 'footer' ? true : false
 			);
 
 			wp_localize_script(

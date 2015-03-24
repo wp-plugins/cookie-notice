@@ -1,101 +1,109 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice\n"
-"POT-Creation-Date: 2015-02-20 22:52+0100\n"
-"PO-Revision-Date: 2015-02-20 22:53+0100\n"
+"POT-Creation-Date: 2015-03-24 11:30+0100\n"
+"PO-Revision-Date: 2015-03-24 11:31+0100\n"
 "Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../cookie-notice.php:109
+#: ../cookie-notice.php:111
 msgid "Top"
 msgstr "Na górze"
 
-#: ../cookie-notice.php:110
+#: ../cookie-notice.php:112
 msgid "Bottom"
 msgstr "Na dole"
 
-#: ../cookie-notice.php:114 ../cookie-notice.php:150
+#: ../cookie-notice.php:116 ../cookie-notice.php:152
 msgid "None"
 msgstr "Brak"
 
-#: ../cookie-notice.php:115
+#: ../cookie-notice.php:117
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../cookie-notice.php:116
+#: ../cookie-notice.php:118
 msgid "Bootstrap"
 msgstr "Bootstrap"
 
-#: ../cookie-notice.php:120
+#: ../cookie-notice.php:122
 msgid "Enable"
 msgstr "Włącz"
 
-#: ../cookie-notice.php:121
+#: ../cookie-notice.php:123
 msgid "Disable"
 msgstr "Wyłącz"
 
-#: ../cookie-notice.php:125
+#: ../cookie-notice.php:127
 msgid "Custom link"
 msgstr "Własny link"
 
-#: ../cookie-notice.php:126
+#: ../cookie-notice.php:128
 msgid "Page link"
 msgstr "Link do strony"
 
-#: ../cookie-notice.php:135
+#: ../cookie-notice.php:137
 msgid "Text color"
 msgstr "Kolor tekstu"
 
-#: ../cookie-notice.php:136
+#: ../cookie-notice.php:138
 msgid "Bar color"
 msgstr "Kolor tła"
 
-#: ../cookie-notice.php:140
+#: ../cookie-notice.php:142
 msgid "1 day"
 msgstr "1 dzień"
 
-#: ../cookie-notice.php:141
+#: ../cookie-notice.php:143
 msgid "1 week"
 msgstr "1 tydzień"
 
-#: ../cookie-notice.php:142
+#: ../cookie-notice.php:144
 msgid "1 month"
 msgstr "1 miesiąc"
 
-#: ../cookie-notice.php:143
+#: ../cookie-notice.php:145
 msgid "3 months"
 msgstr "3 miesiące"
 
-#: ../cookie-notice.php:144
+#: ../cookie-notice.php:146
 msgid "6 months"
 msgstr "6 miesięcy"
 
-#: ../cookie-notice.php:145
+#: ../cookie-notice.php:147
 msgid "1 year"
 msgstr "1 rok"
 
-#: ../cookie-notice.php:146
+#: ../cookie-notice.php:148
 msgid "infinity"
 msgstr "W nieskończoność"
 
-#: ../cookie-notice.php:151
+#: ../cookie-notice.php:153
 msgid "Fade"
 msgstr "Zanikanie"
 
-#: ../cookie-notice.php:152
+#: ../cookie-notice.php:154
 msgid "Slide"
 msgstr "Przesuwanie"
 
-#: ../cookie-notice.php:172
+#: ../cookie-notice.php:158
+msgid "Header"
+msgstr "W nagłówku"
+
+#: ../cookie-notice.php:159
+msgid "Footer"
+msgstr "W stopce"
+
+#: ../cookie-notice.php:179
 msgid ""
 "We use cookies to ensure that we give you the best experience on our "
 "website. If you continue to use this site we will assume that you are happy "
@@ -104,170 +112,179 @@ msgstr ""
 "Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie. "
 "Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie."
 
-#: ../cookie-notice.php:173
+#: ../cookie-notice.php:180
 msgid "Ok"
 msgstr "Zamknij"
 
-#: ../cookie-notice.php:174
+#: ../cookie-notice.php:181
 msgid "Read more"
 msgstr "Dowiedz się więcej"
 
-#: ../cookie-notice.php:204 ../cookie-notice.php:205 ../cookie-notice.php:220
-#: ../cookie-notice.php:223
+#: ../cookie-notice.php:211 ../cookie-notice.php:212 ../cookie-notice.php:227
+#: ../cookie-notice.php:230
 msgid "Cookie Notice"
 msgstr "Ciasteczka"
 
-#: ../cookie-notice.php:225
+#: ../cookie-notice.php:232
 msgid "Need support?"
 msgstr "Potrzebujesz pomocy?"
 
-#: ../cookie-notice.php:226
+#: ../cookie-notice.php:233
 msgid ""
 "If you are having problems with this plugin, please talk about them in the"
 msgstr "Jeśli masz jakieś problemy z tą wtyczką, powiedz o nich"
 
-#: ../cookie-notice.php:226
+#: ../cookie-notice.php:233
 msgid "Support forum"
 msgstr "Forum pomocy"
 
-#: ../cookie-notice.php:228
+#: ../cookie-notice.php:235
 msgid "Do you like this plugin?"
 msgstr "Lubisz tę wtyczkę?"
 
-#: ../cookie-notice.php:235
+#: ../cookie-notice.php:242
 msgid "Rate it 5"
 msgstr "Oceń ją na 5"
 
-#: ../cookie-notice.php:235
+#: ../cookie-notice.php:242
 msgid "on WordPress.org"
 msgstr "na WordPress.org"
 
-#: ../cookie-notice.php:236
+#: ../cookie-notice.php:243
 msgid "Blog about it & link to the"
 msgstr "Napisz o niej i dodaj link"
 
-#: ../cookie-notice.php:236
+#: ../cookie-notice.php:243
 msgid "plugin page"
 msgstr "do strony wtyczki"
 
-#: ../cookie-notice.php:237
+#: ../cookie-notice.php:244
 msgid "Check out our other"
 msgstr "Sprawdż nasze inne"
 
-#: ../cookie-notice.php:237
+#: ../cookie-notice.php:244
 msgid "WordPress plugins"
 msgstr "wtyczki do WordPressa"
 
-#: ../cookie-notice.php:265
+#: ../cookie-notice.php:272
 msgid "Configuration"
 msgstr "Konfiguracja"
 
-#: ../cookie-notice.php:266
+#: ../cookie-notice.php:273
 msgid "Message"
 msgstr "Wiadomość"
 
-#: ../cookie-notice.php:267 ../cookie-notice.php:353
+#: ../cookie-notice.php:274 ../cookie-notice.php:361
 msgid "Button text"
 msgstr "Tekst przycisku"
 
-#: ../cookie-notice.php:268
+#: ../cookie-notice.php:275
 msgid "More info"
 msgstr "Więcej informacji"
 
-#: ../cookie-notice.php:269
+#: ../cookie-notice.php:276
 msgid "Link target"
 msgstr "Cel linku"
 
-#: ../cookie-notice.php:270
+#: ../cookie-notice.php:277
 msgid "Cookie expiry"
 msgstr "Wygasanie cookie"
 
-#: ../cookie-notice.php:271
+#: ../cookie-notice.php:278
+msgid "Script placement"
+msgstr "Pozycja skryptów"
+
+#: ../cookie-notice.php:279
 msgid "Deactivation"
 msgstr "Deaktywacja"
 
-#: ../cookie-notice.php:274
+#: ../cookie-notice.php:282
 msgid "Design"
 msgstr "Wygląd"
 
-#: ../cookie-notice.php:275
+#: ../cookie-notice.php:283
 msgid "Position"
 msgstr "Pozycja"
 
-#: ../cookie-notice.php:276
+#: ../cookie-notice.php:284
 msgid "Animation"
 msgstr "Animacja"
 
-#: ../cookie-notice.php:277
+#: ../cookie-notice.php:285
 msgid "Button style"
 msgstr "Styl przycisku"
 
-#: ../cookie-notice.php:278
+#: ../cookie-notice.php:286
 msgid "Colors"
 msgstr "Kolorystyka"
 
-#: ../cookie-notice.php:299
+#: ../cookie-notice.php:307
 msgid "Enable if you want all plugin data to be deleted on deactivation."
 msgstr ""
 "Włącz jeśli chcesz usunąć wszystkie dane wtyczki podczas jej deaktywacji."
 
-#: ../cookie-notice.php:313
+#: ../cookie-notice.php:321
 msgid "Enter the cookie notice message."
 msgstr "Wpisz treść informacji o ciasteczkach."
 
-#: ../cookie-notice.php:326
+#: ../cookie-notice.php:334
 msgid ""
 "The text of the option to accept the usage of the cookies and make the "
 "notification disappear."
 msgstr "Treść przycisku do akceptacji ciasteczek i zamknięcia powiadomienia ."
 
-#: ../cookie-notice.php:349
+#: ../cookie-notice.php:357
 msgid "Enable or Disable Read more button."
 msgstr "Włącz lub wyłącz przycisk z linkiem do dodatkowych informacji."
 
-#: ../cookie-notice.php:367
+#: ../cookie-notice.php:375
 msgid "Select where to redirect user for more information about cookies."
 msgstr ""
 "Wybierz dokąd przekierować użytkownika aby uzyskał więcej informacji o "
 "ciasteczkach."
 
-#: ../cookie-notice.php:370
+#: ../cookie-notice.php:378
 msgid "-- select page --"
 msgstr "-- wybierz stronę --"
 
-#: ../cookie-notice.php:380
+#: ../cookie-notice.php:388
 msgid "Select from one of your site's pages"
 msgstr "Wybierz jedną z istniejących stron."
 
-#: ../cookie-notice.php:384
+#: ../cookie-notice.php:392
 msgid "Enter the full URL starting with http://"
 msgstr "Podaj pełny adres URL zaczynający się od http://"
 
-#: ../cookie-notice.php:406
+#: ../cookie-notice.php:414
 msgid "Select the link target for more info page."
 msgstr "Wybierz cel linku dla strony z dodatkowymi informacjami."
 
-#: ../cookie-notice.php:429
+#: ../cookie-notice.php:437
 msgid "The ammount of time that cookie should be stored for."
 msgstr "Okres czasu przez jaki będzie przechowywane ciasteczko."
 
-#: ../cookie-notice.php:452
+#: ../cookie-notice.php:458
+msgid "Select where all the plugin scripts should be placed."
+msgstr ""
+"Wybierz w którym miejscu strony powinny być umieszczone skrypty wtyczki."
+
+#: ../cookie-notice.php:481
 msgid "Select location for your cookie notice."
 msgstr "Wybierz pozycję wiadomości o ciasteczkach."
 
-#: ../cookie-notice.php:475
+#: ../cookie-notice.php:504
 msgid "Cookie notice acceptance animation."
 msgstr "Animacja po akceptacji ciasteczek."
 
-#: ../cookie-notice.php:498
+#: ../cookie-notice.php:527
 msgid "Choose buttons style."
 msgstr "Wybierz styl dla przycisków."
 
-#: ../cookie-notice.php:631
+#: ../cookie-notice.php:663
 msgid "Support"
 msgstr "Forum pomocy"
 
-#: ../cookie-notice.php:659
+#: ../cookie-notice.php:691
 msgid "Settings"
 msgstr "Ustawienia"
 
