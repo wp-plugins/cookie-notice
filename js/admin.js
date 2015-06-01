@@ -3,28 +3,41 @@
 	$( document ).ready( function () {
 
 		// initialize color picker
-		$( '.cn-color' ).wpColorPicker();
+		$( '.cn_color' ).wpColorPicker();
+
+		// refuse option
+		$( '#cn_refuse_opt' ).change( function () {
+			if ( $( this ).is(':checked') ) {
+				$( '#cn_refuse_text' ).slideDown( 'fast' );
+			} else {
+				$( '#cn_refuse_text' ).slideUp( 'fast' );
+			}
+		} );
 
 		// read more option
-		$( '#cn-see-more-yes, #cn-see-more-no' ).change( function () {
-			if ( $( '#cn-see-more-yes:checked' ).val() === 'yes' ) {
-				$( '#cn_see_more_opt' ).fadeIn( 300 );
-			} else if ( $( '#cn-see-more-no:checked' ).val() === 'no' ) {
-				$( '#cn_see_more_opt' ).fadeOut( 300 );
+		$( '#cn_see_more' ).change( function () {
+			if ( $( this ).is(':checked') ) {
+				$( '#cn_see_more_opt' ).slideDown( 'fast' );
+			} else {
+				$( '#cn_see_more_opt' ).slideUp( 'fast' );
 			}
 		} );
 
 		// read more link
-		$( '#cn-see-more-link-custom, #cn-see-more-link-page' ).change( function () {
-			if ( $( '#cn-see-more-link-custom:checked' ).val() === 'custom' ) {
-				$( '#cn_see_more_opt_page' ).fadeOut( 300, function () {
-					$( '#cn_see_more_opt_link' ).fadeIn( 300 );
+		$( '#cn_see_more_link-custom, #cn_see_more_link-page' ).change( function () {
+			if ( $( '#cn_see_more_link-custom:checked' ).val() === 'custom' ) {
+				$( '#cn_see_more_opt_page' ).slideUp( 'fast', function () {
+					$( '#cn_see_more_opt_link' ).slideDown( 'fast' );
 				} );
-			} else if ( $( '#cn-see-more-link-page:checked' ).val() === 'page' ) {
-				$( '#cn_see_more_opt_link' ).fadeOut( 300, function () {
-					$( '#cn_see_more_opt_page' ).fadeIn( 300 );
+			} else if ( $( '#cn_see_more_link-page:checked' ).val() === 'page' ) {
+				$( '#cn_see_more_opt_link' ).slideUp( 'fast', function () {
+					$( '#cn_see_more_opt_page' ).slideDown( 'fast' );
 				} );
 			}
+		} );
+		
+		$( document ).on( 'click', 'input#reset_cookie_notice_options', function () {
+			return confirm( cnArgs.resetToDefaults );
 		} );
 
 	} );

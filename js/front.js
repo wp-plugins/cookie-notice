@@ -2,18 +2,28 @@
 
 	$( document ).ready( function () {
 
-		// handle close button click
-		$( document ).on( 'click', '#cn-accept-cookie', function ( event ) {
-			event.preventDefault();
+		// handle set-cookie button click
+		$( document ).on( 'click', '.cn-set-cookie', function ( e ) {
+			e.preventDefault();
 
-			var cnTime = new Date();
-			var cnLater = new Date();
+			var cnTime = new Date(),
+				cnLater = new Date();
 
 			// set expiry time in seconds
 			cnLater.setTime( parseInt( cnTime.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
 
 			// set cookie
-			document.cookie = cnArgs.cookieName + '=true' + ';expires=' + cnLater.toGMTString() + ';' + ( cnArgs.cookieDomain !== undefined && cnArgs.cookieDomain !== '' ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( cnArgs.cookiePath !== undefined && cnArgs.cookiePath !== '' ? 'path=' + cnArgs.cookiePath + ';' : '' );
+			var cookie_value = $( this ).data( 'cookie-set' ) === 'accept' ? true : false;
+			
+			document.cookie = cnArgs.cookieName + '=' + cookie_value + ';expires=' + cnLater.toGMTString() + ';' + ( cnArgs.cookieDomain !== undefined && cnArgs.cookieDomain !== '' ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( cnArgs.cookiePath !== undefined && cnArgs.cookiePath !== '' ? 'path=' + cnArgs.cookiePath + ';' : '' );
+			
+			// trigger custom event
+			$.event.trigger({
+				type: "setCookieNotice",
+				value: cookie_value,
+				time: cnTime,
+				expires: cnLater
+			});
 
 			// hide message container
 			if ( cnArgs.hideEffect === 'fade' ) {
@@ -27,6 +37,7 @@
 			} else {
 				$( '#cookie-notice' ).remove();
 			}
+
 		} );
 
 		// display cookie notice
