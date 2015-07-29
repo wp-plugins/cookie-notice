@@ -80,7 +80,7 @@
 
 	// remove Cookie Notice
 	$.fn.removeCookieNotice = function ( cookie_value ) {
-		$( this ).remove();
+		$( '#cookie-notice' ).remove();
 		$( 'body' ).removeClass( 'cookies-not-accepted' );
 	}
 
